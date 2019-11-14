@@ -1,10 +1,19 @@
-import os
+from not_ig import create_app
 
-from flask import Flask
+app = create_app
 
 
-web_dir = os.path.join(os.path.dirname(
-    os.path.abspath(__file__)), 'not-ig'
-)
+# import os
 
-app = Flask('NOT-IG', root_path=web_dir)
+# from flask import Flask
+
+
+# web_dir = os.path.join(os.path.dirname(
+#     os.path.abspath(__file__)), 'not-ig'
+# )
+
+# app = Flask('NOT-IG', root_path=web_dir)
+
+
+# if __name__ == '__main__':
+#     app.run()
