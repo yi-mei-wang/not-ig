@@ -10,6 +10,7 @@ def index():
 
 
 # Catch all routes
-@public_blueprint.route('/', methods=["GET"])
-def catch_all(*args, **kwargs):
+@public_blueprint.route('/<path:path>', methods=["GET"])
+def catch_all(**kwargs):
+    # Which html? and what goes into the html?
     return render_template("frontend/public/index.html")
