@@ -2,7 +2,7 @@ import os
 
 from flask import Flask
 
-import extensions
+import not_ig.extensions
 from not_ig.web.public.views import public_blueprint
 
 
