@@ -13,4 +13,4 @@ class User(db.Model):
 
     @hybrid_property
     def profile_image_url(self):
-        return f'${current_app.config.get("S3_LOCATION")}${self.profile_image}'
+        return f'{current_app.config.get("S3_LOCATION")}{self.profile_image}'
