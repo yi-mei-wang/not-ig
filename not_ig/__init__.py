@@ -2,7 +2,7 @@ import os
 
 from flask import Flask
 
-import not_ig.extensions
+import not_ig.extensions as extensions
 from not_ig.api.blueprints.users_api import users_api_blueprint
 from not_ig.api.blueprints.images_api import images_api_blueprint
 from not_ig.util.commands import seed
