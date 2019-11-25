@@ -17,7 +17,8 @@ def insert_users(users):
         )
         queries.append(new_user)
 
-    return queries
+    db.session.add_all(queries)
+    db.session.commit()
 
 
 def insert_images(images):
@@ -30,26 +31,24 @@ def insert_images(images):
             user_id=index+1)
         queries.append(new_img)
 
-    return queries
+    db.session.add_all(queries)
+    db.session.commit()
 
 
 def run():
-    user_queries = insert_users(users)
-    image_queries = insert_images(images)
-
-    db.session.add_all(user_queries + image_queries)
-    db.session.commit()
+    insert_users(users)
+    insert_images(images)
 
 
 users = [
     {
         "id": 1,
-        "username": "blake",
+        "username": "mrs-reynolds",
         "profileImage": "http://next-curriculum-instagram.s3.amazonaws.com/idol2-blake.jpg"
     },
     {
         "id": 2,
-        "username": "ryanG",
+        "username": "guy",
         "profileImage": "http://next-curriculum-instagram.s3.amazonaws.com/idol1-ryan.jpg"
     },
     {
