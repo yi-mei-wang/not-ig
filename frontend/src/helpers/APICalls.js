@@ -4,7 +4,9 @@ import axios from "axios";
 
 const AUTH_TOKEN = localStorage.getItem("jwt");
 
-axios.defaults.baseURL = "https://insta.nextacademy.com/api/v1";
+// axios.defaults.baseURL = "https://insta.nextacademy.com/api/v1";
+axios.defaults.baseURL = "/api/v1";
+// axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 
 const postUserData = async (url, credentials) => {
   const signal = axios.CancelToken.source();
