@@ -5,6 +5,7 @@ from flask import Flask
 import not_ig.extensions
 from not_ig.api.blueprints.users_api import users_api_blueprint
 from not_ig.api.blueprints.images_api import images_api_blueprint
+from not_ig.util.commands import seed
 from not_ig.web.public.views import public_blueprint
 
 
@@ -18,6 +19,7 @@ def create_app():
 
     register_blueprints(app)
     register_extensions(app)
+    register_commands(app)
 
     return app
 
@@ -31,3 +33,7 @@ def register_blueprints(app):
 def register_extensions(app):
     extensions.db.init_app(app)
     extensions.migrate.init_app(app, extensions.db)
+
+
+def register_commands(app):
+    app.cli.add_command(seed)
