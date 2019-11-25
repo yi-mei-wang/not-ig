@@ -17,3 +17,17 @@ def index():
     ]
 
     return jsonify(all_users)
+
+
+@users_api_blueprint.route('/<id>', methods=['GET'])
+def show(id):
+    user = User.query.get(id)
+
+    if user:
+        return jsonify(
+            {'id': user.id,
+             'profileImage': user.profile_image,
+             'username': user.username}
+        )
+
+    return jsonify('user not found'), 404
