@@ -5,5 +5,20 @@ export const APIUrls = {
   userImages: "/images/?userId=",
   userInfo: "/users/",
   login: "/login",
-  signup: "/users/"
+  signup: "/users/",
+  upload: "/images/"
 };
+
+// const APIUrls = {
+//   images: {
+//     me: "/images/me",
+//     user: "/images/?userId=",
+//     upload: "/images/"
+//   },
+//   users: {
+//     all: "/users/",
+//     info: "/users/",
+//     signup: "/users/",
+//     login: "/login/"
+//   }
+// };

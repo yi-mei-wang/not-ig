@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { APIUrls } from "../constants/APIUrls";
 import UploadForm from "../components/UploadForm";
 import { PreviewImage } from "../components/PreviewImage";
 
@@ -36,7 +37,7 @@ export default class UploadPage extends React.Component {
     formData.append("image", this.state.imageFile);
 
     axios
-      .post("https://insta.nextacademy.com/api/v1/images/", formData, {
+      .post(APIUrls.upload, formData, {
         headers: { Authorization: `Bearer ${authToken}` }
       })
       .then(resp => {
