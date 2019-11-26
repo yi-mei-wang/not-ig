@@ -21,6 +21,7 @@ def index():
 
 @users_api_blueprint.route('/<id>', methods=['GET'])
 def show(id):
+    id = 1 if id == 'me' else id
     user = User.query.get(id)
 
     if user:
