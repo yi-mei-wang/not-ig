@@ -16,7 +16,6 @@ class ImageUploader:
         self._check_file()
         self._set_up_client()
         self._upload_to_s3()
-        breakpoint()
 
         return (self.path, self.errors)
 
