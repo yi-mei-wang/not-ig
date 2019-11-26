@@ -9,8 +9,18 @@ images_api_blueprint = Blueprint('images_api', __name__)
 
 
 @images_api_blueprint.route('/', methods=['GET'])
-def index():
+def show():
     user_id = request.args.get('userId')
+    images = [img.path for img in Image.query.filter_by(user_id=user_id)]
+
+    return jsonify(images)
+
+
+@images_api_blueprint.route('/me', methods=['GET'])
+def show_me():
+    # Decode auth token from authorization header
+    user_id = 1
+
     images = [img.path for img in Image.query.filter_by(user_id=user_id)]
 
     return jsonify(images)
